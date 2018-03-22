@@ -28,6 +28,7 @@ func (ua *UserAges) Get(name string) int {
 func main() {
 	m := new(sync.Mutex)
 	var ages = UserAges{make(map[string]int,0), *m}
+	//var ages = UserAges{ages:make(map[string]int,0) }
 	for i:= 0; i < 1000; i++{
 		go ages.Add("aaa"+string(i),i)
 		//fmt.Println(i)
